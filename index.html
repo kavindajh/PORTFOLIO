@@ -13,15 +13,15 @@
            <div class="container">
             <nav>
               <h2> <b> Kavinda_jh</b></h2>
-               <ul>
-                <li><a href ="#">Home</a></li>
-                <li><a href ="#">About</a></li>
-                <li><a href ="#">Services</a></li>
-                <li><a href ="#">Portfolio</a></li>
-                <li><a href ="#">Contact</a></li>
-                <i class="fas fa-times"></i>
+               <ul id="sidemenu">
+                <li><a href ="#header">Home</a></li>
+                <li><a href ="#about">About</a></li>
+                <li><a href ="#services">Services</a></li>
+                <li><a href ="#portfolio">Portfolio</a></li>
+                <li><a href ="#contact">Contact</a></li>
+                <i class="fas fa-times"  onclick ="closemenu()"></i>
                </ul>
-               <i class="fas fa-bars"></i>
+               <i class="fas fa-bars" onclick="openmenu()"></i>
             </nav>
             <div class="header-text">
                 <p>Web Developer</p>
@@ -46,8 +46,8 @@
                         gvgdfnhgjuk
                         gbfgjnghm,jijhdefbngghnnmhfkfkuhkmjf
                         gnngfngfnghg
-                        gndffgfnghjmhfghyghgggdfhgnhssskkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
-                        kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+                        gndffgfnghjmhfghyghgggdfhgnhssskkkkkkkkkk kkkkkkkkkk kkkkkkk kkkkkkk kkkkk kkkkkkkk
+                        kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk kkkkkkkkkkk kkkkkkkkkkkk kkkkkk kkkkkkkk
                         kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
                     </p>
 
@@ -182,6 +182,7 @@
                     <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
                     <button type="submit" class="btn btn2">Submit</button>
                 </form>
+                <span id="msg">Hello</span>
                 
             </div>
         </div>
@@ -212,6 +213,29 @@
             document.getElementById(tabname).classList.add("active-tab");
         }
         </script>
+         <script>
+            var sidemeu=document.getElementById("sidemenu");
+
+            function openmenu(){
+                sidemenu.style.right="0";
+
+            }
+            function closemenu(){
+                sidemeu.style.right="-200px";
+            }
+         </script>
+         <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbyAwmUr-tcdtgSTVN4-gqm5m3c6NqatIPTjkaevZrmZW73c13rz5pX_b3bHdaReV_nI/exec'
+            const form = document.forms['submit-to-google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => console.log('Success!', response))
+                .catch(error => console.error('Error!', error.message))
+            })
+
+          </script>
         </body>
 </html>
         
